@@ -41,6 +41,10 @@
                 <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE8DC;</TextBlock>
             </Button>
 
+            <ComboBox x:Name="FontComboBox" Width="150" 
+              SelectionChanged="FontComboBox_SelectionChanged"
+              ToolTip="Select Font">
+            </ComboBox>
 
             <Button ToolTip="Bulleted List" Click="BulletList_Click">
                 <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE8FD;</TextBlock>

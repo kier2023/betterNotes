@@ -6,6 +6,8 @@ using Microsoft.Win32;
 using System;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Linq;
 
 namespace BetterNotes
 {
@@ -18,6 +20,7 @@ namespace BetterNotes
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += MainWindow_Loaded;
             this.Closing += MainWindow_Closing;
 
             currentFilePath = Path.Combine(documentsFolder, "untitled.txt");
@@ -26,6 +29,12 @@ namespace BetterNotes
             {
                 LoadFile(currentFilePath);
             }
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            FontComboBox.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
+            FontComboBox.SelectedItem = NoteTextBox.FontFamily;
         }
 
         private void Bold_Click(object sender, RoutedEventArgs e)
@@ -41,6 +50,21 @@ namespace BetterNotes
         private void Underline_Click(object sender, RoutedEventArgs e)
         {
             EditingCommands.ToggleUnderline.Execute(null, NoteTextBox);
+        }
+
+        private void FontComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (FontComboBox.SelectedItem is FontFamily selectedFont)
+            {
+                if (!NoteTextBox.Selection.IsEmpty)
+                {
+                    NoteTextBox.Selection.ApplyPropertyValue(TextElement.FontFamilyProperty, selectedFont);
+                }
+                else
+                {
+                    NoteTextBox.FontFamily = selectedFont;
+                }
+            }
         }
 
         private void BulletList_Click(object sender, RoutedEventArgs e)
