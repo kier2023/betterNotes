@@ -40,6 +40,13 @@
             <Button Click="Underline_Click" ToolTip="Underline">
                 <TextBlock TextDecorations="Underline">U</TextBlock>
             </Button>
+
+            <Button Click="BulletList_Click" ToolTip="Bulleted List">
+                •
+            </Button>
+            <Button Click="NumberList_Click" ToolTip="Numbered List">
+                1.
+            </Button>
         </ToolBar>
 
         <!-- Text Box -->

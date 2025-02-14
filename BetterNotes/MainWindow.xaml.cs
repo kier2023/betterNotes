@@ -42,6 +42,16 @@ namespace BetterNotes
             EditingCommands.ToggleUnderline.Execute(null, NoteTextBox);
         }
 
+        private void BulletList_Click(object sender, RoutedEventArgs e)
+        {
+            EditingCommands.ToggleBullets.Execute(null, NoteTextBox);
+        }
+
+        private void NumberList_Click(object sender, RoutedEventArgs e)
+        {
+            EditingCommands.ToggleNumbering.Execute(null, NoteTextBox);
+        }
+
         private void NoteTextBox_TextChanged(object sender, RoutedEventArgs e)
         {
 
