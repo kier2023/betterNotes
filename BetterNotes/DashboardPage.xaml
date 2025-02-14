@@ -10,7 +10,17 @@
 
     <Grid>
         <Grid>
-            <DataGrid Name="NotesDatasGrid" AutoGenerateColumns="True" />
+            <DataGrid Name="NotesDataGrid" 
+                      AutoGenerateColumns="False" 
+                      CanUserAddRows="False" 
+                      IsReadOnly="True" 
+                      SelectionMode="Single">
+                
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="File Name" Binding="{Binding FileName}" Width="*" />
+                    <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" Width="2*" />
+                </DataGrid.Columns>
+            </DataGrid>
         </Grid>
     </Grid>
 </Page>

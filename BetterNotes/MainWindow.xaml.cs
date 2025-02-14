@@ -46,12 +46,13 @@ namespace BetterNotes
 
         private void NavigateHome_Click(object sender, RoutedEventArgs e)
         {
+            System.Windows.MessageBox.Show("Navigating to Home...");
             MainFrame.Navigate(new DashboardPage());
         }
 
         private void SaveFile_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(currentFilePath) || currentFilePath == "untitled.txxt")
+            if (string.IsNullOrEmpty(currentFilePath) || currentFilePath == "untitled.txt")
             {
                 SaveAs_Click(sender, e);
             }
