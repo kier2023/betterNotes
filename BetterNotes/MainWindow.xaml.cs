@@ -9,7 +9,7 @@ namespace BetterNotes
 {
     public partial class MainWindow : Window
     {
-        private string documentsFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        private readonly string documentsFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         private string currentFilePath;
         private bool isUnsaved = false;
 
