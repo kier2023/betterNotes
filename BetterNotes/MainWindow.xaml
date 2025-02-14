@@ -32,20 +32,20 @@
         <!-- Formatting Toolbar -->
         <ToolBar Grid.Row="1">
             <Button Click="Bold_Click" ToolTip="Bold">
-                <TextBlock FontWeight="Bold">B</TextBlock>
+                <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE8DD;</TextBlock>
             </Button>
             <Button Click="Italic_Click" ToolTip="Italic">
-                <TextBlock FontStyle="Italic">I</TextBlock>
+                <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE8DB;</TextBlock>
             </Button>
             <Button Click="Underline_Click" ToolTip="Underline">
-                <TextBlock TextDecorations="Underline">U</TextBlock>
+                <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE8DC;</TextBlock>
             </Button>
 
             <Button Click="BulletList_Click" ToolTip="Bulleted List">
-                •
+                <TextBox FontFamily="Segoe Fluent Icons" FontSize="18">&#xE8FD;</TextBox>
             </Button>
             <Button Click="NumberList_Click" ToolTip="Numbered List">
-                1.
+                <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE821;</TextBlock>
             </Button>
         </ToolBar>
 
