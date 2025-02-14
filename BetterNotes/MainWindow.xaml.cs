@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Microsoft.Win32;
 using System;
 using System.Windows.Documents;
+using System.Windows.Input;
 
 namespace BetterNotes
 {
@@ -51,6 +52,13 @@ namespace BetterNotes
             }
         }
 
+        private void CheckList_Click(object sender, RoutedEventArgs e)
+        {
+            string checkboxSymbol = "☐ ";
+            NoteTextBox.CaretPosition.InsertTextInRun(checkboxSymbol);
+            NoteTextBox.CaretPosition = NoteTextBox.CaretPosition.GetNextInsertionPosition(LogicalDirection.Forward);
+        }
+
         private void BulletStyle_Click(object sender, RoutedEventArgs e)
         {
             if (sender is System.Windows.Controls.MenuItem item)
@@ -60,7 +68,6 @@ namespace BetterNotes
                 NoteTextBox.CaretPosition = NoteTextBox.CaretPosition.GetNextInsertionPosition(LogicalDirection.Forward);
             }
         }
-
 
         private void NoteTextBox_TextChanged(object sender, RoutedEventArgs e)
         {
@@ -96,6 +103,52 @@ namespace BetterNotes
             int col = index;
 
             LineColText.Text = $"Ln {line}, Col {col}";
+        }
+
+        private void NoteTextBox_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            TextPointer position = NoteTextBox.GetPositionFromPoint(e.GetPosition(NoteTextBox), true);
+
+            if (position != null)
+            {
+                TextPointer start = position.GetPositionAtOffset(-1, LogicalDirection.Backward);
+
+                if (start != null)
+                {
+                    string character = new TextRange(start, position).Text;
+
+                    if (character == "☐")
+                    {
+                        new TextRange(start, position).Text = "☑";
+                        e.Handled = true;
+                    }
+                    else if (character == "☑")
+                    {
+                        new TextRange(start, position).Text = "☐";
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
+
+        private void NoteTextBox_PreviewMouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            TextPointer position = NoteTextBox.GetPositionFromPoint(e.GetPosition(NoteTextBox), true);
+
+            if (position != null)
+            {
+                TextPointer start = position.GetPositionAtOffset(-1, LogicalDirection.Backward);
+                if (start != null)
+                {
+                    string text = new TextRange(start, position).Text;
+                    if (text == "☐" || text == "☑")
+                    {
+                        NoteTextBox.Cursor = System.Windows.Input.Cursors.Hand;
+                        return;
+                    }
+                }
+            }
+            NoteTextBox.Cursor = System.Windows.Input.Cursors.IBeam;
         }
 
         private void SaveFile_Click(object sender, RoutedEventArgs e)

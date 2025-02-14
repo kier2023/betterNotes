@@ -52,12 +52,17 @@
                     </ContextMenu>
                 </Button.ContextMenu>
             </Button>
+
+            <Button Click="CheckList_Click" ToolTip="CheckList">
+                <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xe762;</TextBlock>
+            </Button>
         </ToolBar>
 
         <!-- Text Box -->
         <RichTextBox x:Name="NoteTextBox" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
              FontSize="14" Grid.Row="2" SelectionChanged="NoteTextBox_SelectionChanged" 
-             TextChanged="NoteTextBox_TextChanged">
+             TextChanged="NoteTextBox_TextChanged" PreviewMouseDown="NoteTextBox_PreviewMouseDown"
+             PreviewMouseMove="NoteTextBox_PreviewMouseMove">
             <FlowDocument>
                 <Paragraph></Paragraph>
             </FlowDocument>
