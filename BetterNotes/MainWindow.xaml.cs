@@ -4,12 +4,13 @@ using System.IO;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using System;
+using System.Windows.Documents;
 
 namespace BetterNotes
 {
     public partial class MainWindow : Window
     {
-        private readonly string documentsFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        private string documentsFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         private string currentFilePath;
         private bool isUnsaved = false;
 
@@ -22,38 +23,76 @@ namespace BetterNotes
 
             if (File.Exists(currentFilePath))
             {
-                NoteTextBox.Text = File.ReadAllText(currentFilePath);
+                LoadFile(currentFilePath);
             }
         }
 
-        private void NoteTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void Bold_Click(object sender, RoutedEventArgs e)
         {
-            CharCountText.Text = $"Characters: {NoteTextBox.Text.Length}";
+            EditingCommands.ToggleBold.Execute(null, NoteTextBox);
+        }
+
+        private void Italic_Click(object sender, RoutedEventArgs e)
+        {
+            EditingCommands.ToggleItalic.Execute(null, NoteTextBox);
+        }
+
+        private void Underline_Click(object sender, RoutedEventArgs e)
+        {
+            EditingCommands.ToggleUnderline.Execute(null, NoteTextBox);
+        }
+
+        private void NoteTextBox_TextChanged(object sender, RoutedEventArgs e)
+        {
+            if (NoteTextBox == null || NoteTextBox.Document == null)
+            {
+                Console.WriteLine("❌ NoteTextBox or Document is NULL!");
+                return;
+            }
+
+            TextRange textRange = new TextRange(NoteTextBox.Document.ContentStart, NoteTextBox.Document.ContentEnd);
+
+            if (textRange.Text == null)
+            {
+                Console.WriteLine("❌ textRange.Text is NULL!");
+                if (CharCountText != null)
+                {
+                    CharCountText.Text = "Characters: 0";
+                }
+                return;
+            }
+
+            if (CharCountText != null)
+            {
+                CharCountText.Text = $"Characters: {textRange.Text.Trim().Length}";
+            }
 
             isUnsaved = true;
-            SaveStatusText.Text = "Unsaved Changes";
+            if (SaveStatusText != null)
+            {
+                SaveStatusText.Text = "Unsaved Changes";
+            }
         }
+
 
         private void NoteTextBox_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            int index = NoteTextBox.CaretIndex;
-            int line = NoteTextBox.GetLineIndexFromCharacterIndex(index) + 1;
-            int col = index - NoteTextBox.GetCharacterIndexFromLineIndex(line - 1) + 1;
+            int index = new TextRange(NoteTextBox.Document.ContentStart, NoteTextBox.CaretPosition).Text.Length;
+            int line = NoteTextBox.CaretPosition.GetLineStartPosition(0) == null ? 1 : 2;
+            int col = index;
 
             LineColText.Text = $"Ln {line}, Col {col}";
         }
 
         private void SaveFile_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(currentFilePath) || currentFilePath == Path.Combine(documentsFolder, "untitled.txt"))
+            if (string.IsNullOrEmpty(currentFilePath) || currentFilePath == Path.Combine(documentsFolder, "untitled.rtf"))
             {
                 SaveAs_Click(sender, e);
             }
             else
             {
-                File.WriteAllText(currentFilePath, NoteTextBox.Text);
-                isUnsaved = false;
-                SaveStatusText.Text = "Saved";
+                SaveFile(currentFilePath);
             }
         }
 
@@ -61,7 +100,7 @@ namespace BetterNotes
         {
             System.Windows.Forms.SaveFileDialog saveFileDialog = new System.Windows.Forms.SaveFileDialog()
             {
-                Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*",
+                Filter = "Rich Text Format (*.rtf)|*.rtf|Text Files (*.txt)|*.txt|All Files (*.*)|*.*",
                 FileName = currentFilePath,
                 InitialDirectory = documentsFolder
             };
@@ -69,9 +108,7 @@ namespace BetterNotes
             if (saveFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 currentFilePath = saveFileDialog.FileName;
-                File.WriteAllText(currentFilePath, NoteTextBox.Text);
-                isUnsaved = false;
-                SaveStatusText.Text = "Saved";
+                SaveFile(currentFilePath);
             }
         }
 
@@ -79,7 +116,7 @@ namespace BetterNotes
         {
             System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog()
             {
-                Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*",
+                Filter = "Rich Text Format (*.rtf)|*.rtf|Text Files (*.txt)|*.txt|All Files (*.*)|*.*",
                 Title = "Open File",
                 InitialDirectory = documentsFolder
             };
@@ -87,13 +124,41 @@ namespace BetterNotes
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 currentFilePath = openFileDialog.FileName;
-                NoteTextBox.Text = File.ReadAllText(currentFilePath);
+                LoadFile(currentFilePath);
             }
         }
 
+        private void SaveFile(string filePath)
+        {
+            using (FileStream fs = new FileStream(filePath, FileMode.Create))
+            {
+                TextRange range = new TextRange(NoteTextBox.Document.ContentStart, NoteTextBox.Document.ContentEnd);
+                range.Save(fs, System.Windows.DataFormats.Rtf);
+            }
+            isUnsaved = false;
+            SaveStatusText.Text = "Saved";
+        }
+
+        private void LoadFile(string filePath)
+        {
+            try
+            {
+                using (FileStream fs = new FileStream(filePath, FileMode.Open))
+                {
+                    TextRange range = new TextRange(NoteTextBox.Document.ContentStart, NoteTextBox.Document.ContentEnd);
+                    range.Load(fs, System.Windows.DataFormats.Rtf);
+                }
+            }
+            catch (ArgumentException ex)
+            {
+                System.Windows.MessageBox.Show("The file is not in a valid RTF format.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            File.WriteAllText(currentFilePath, NoteTextBox.Text);
+            SaveFile(currentFilePath);
         }
     }
 }

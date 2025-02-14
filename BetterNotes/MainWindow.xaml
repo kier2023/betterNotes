@@ -8,14 +8,18 @@
         Title="Better Notes" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
             <!-- Menu bar to appear at the top -->
-            <RowDefinition Height="*" />
-            <!-- Textbox will need to take most space -->
             <RowDefinition Height="Auto" />
+            <!-- Formattin ToolBar -->
+            <RowDefinition Height="Auto" />
+            <!-- Textbox will need to take most space -->
+            <RowDefinition Height="*" />
+
             <!-- Status bar to appear at the bottom of the app -->
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
+        
         <!-- Menu Bar -->
         <Menu Grid.Row="0">
             <MenuItem Header="File">
@@ -24,16 +28,31 @@
                 <MenuItem Header="Save As..." Click="SaveAs_Click"></MenuItem>
             </MenuItem>
         </Menu>
-                
-        <!-- Text Box -->
-        <TextBox x:Name="NoteTextBox" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
-                 FontSize="14" TextWrapping="NoWrap" 
-                 Grid.Row="1" TextChanged="NoteTextBox_TextChanged"
-                 SelectionChanged="NoteTextBox_SelectionChanged"/>
 
-        
+        <!-- Formatting Toolbar -->
+        <ToolBar Grid.Row="1">
+            <Button Click="Bold_Click" ToolTip="Bold">
+                <TextBlock FontWeight="Bold">B</TextBlock>
+            </Button>
+            <Button Click="Italic_Click" ToolTip="Italic">
+                <TextBlock FontStyle="Italic">I</TextBlock>
+            </Button>
+            <Button Click="Underline_Click" ToolTip="Underline">
+                <TextBlock TextDecorations="Underline">U</TextBlock>
+            </Button>
+        </ToolBar>
+
+        <!-- Text Box -->
+        <RichTextBox x:Name="NoteTextBox" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
+             FontSize="14" Grid.Row="2" SelectionChanged="NoteTextBox_SelectionChanged" 
+             TextChanged="NoteTextBox_TextChanged">
+            <FlowDocument>
+                <Paragraph></Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
         <!-- Status Bar -->
-        <StatusBar Grid.Row="2">
+        <StatusBar Grid.Row="3">
             <StatusBarItem>
                 <TextBlock Name="CharCountText" Text="Characters: 0" />
             </StatusBarItem>
