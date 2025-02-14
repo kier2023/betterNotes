@@ -149,7 +149,7 @@ namespace BetterNotes
                     range.Load(fs, System.Windows.DataFormats.Rtf);
                 }
             }
-            catch (ArgumentException ex)
+            catch (ArgumentException)
             {
                 System.Windows.MessageBox.Show("The file is not in a valid RTF format.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
@@ -158,7 +158,18 @@ namespace BetterNotes
 
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            SaveFile(currentFilePath);
+            if (isUnsaved)
+            {
+                var result = System.Windows.MessageBox.Show("You have unsaved changes. Do you want to save them before exiting?", "Unsaved Changes", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
+                if (result == MessageBoxResult.Yes)
+                {
+                    SaveFile(currentFilePath);
+                }
+                else if (result == MessageBoxResult.Cancel)
+                {
+                    e.Cancel = true;
+                }
+            }
         }
     }
 }
