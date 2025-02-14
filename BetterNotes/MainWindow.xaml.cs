@@ -44,17 +44,11 @@ namespace BetterNotes
 
         private void NoteTextBox_TextChanged(object sender, RoutedEventArgs e)
         {
-            if (NoteTextBox == null || NoteTextBox.Document == null)
-            {
-                Console.WriteLine("❌ NoteTextBox or Document is NULL!");
-                return;
-            }
 
             TextRange textRange = new TextRange(NoteTextBox.Document.ContentStart, NoteTextBox.Document.ContentEnd);
 
             if (textRange.Text == null)
             {
-                Console.WriteLine("❌ textRange.Text is NULL!");
                 if (CharCountText != null)
                 {
                     CharCountText.Text = "Characters: 0";
