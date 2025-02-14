@@ -33,6 +33,10 @@ namespace BetterNotes
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            double defaultFontSize = 14;
+            NoteTextBox.FontSize = defaultFontSize;
+            FontSizeTextBox.Text = defaultFontSize.ToString();
+
             FontComboBox.ItemsSource = Fonts.SystemFontFamilies.OrderBy(f => f.Source);
             FontComboBox.SelectedItem = NoteTextBox.FontFamily;
         }
@@ -65,6 +69,42 @@ namespace BetterNotes
                     NoteTextBox.FontFamily = selectedFont;
                 }
             }
+        }
+
+        private void IncreaseFontSizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            double currentSize = NoteTextBox.FontSize;
+            double newSize = currentSize + 2;
+            ApplyFontSize(newSize);
+        }
+
+        private void DecreaseFontSizeButton_Click(object sender, RoutedEventArgs e)
+        {
+            double currentSize = NoteTextBox.FontSize;
+            double newSize = currentSize - 2;
+            ApplyFontSize(newSize);
+        }
+
+        private void FontSizeTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (double.TryParse(FontSizeTextBox.Text, out double newSize))
+            {
+                ApplyFontSize(newSize);
+            }
+        }
+
+        private void ApplyFontSize(double size)
+        {
+            if (!NoteTextBox.Selection.IsEmpty)
+            {
+                NoteTextBox.Selection.ApplyPropertyValue(TextElement.FontSizeProperty, size);
+            }
+            else
+            {
+                NoteTextBox.FontSize = size;
+            }
+
+            FontSizeTextBox.Text = size.ToString();
         }
 
         private void BulletList_Click(object sender, RoutedEventArgs e)

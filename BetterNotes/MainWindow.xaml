@@ -46,6 +46,19 @@
               ToolTip="Select Font">
             </ComboBox>
 
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                <Button x:Name="DecreaseFontSizeButton" Click="DecreaseFontSizeButton_Click" ToolTip="Decrease Font Size">
+                    <TextBlock Text="-" FontSize="18" />
+                </Button>
+
+                <TextBox x:Name="FontSizeTextBox" Width="30" Margin="5,0" TextAlignment="Center"
+                         TextChanged="FontSizeTextBox_TextChanged" ToolTip="Font Size" />
+
+                <Button x:Name="IncreaseFontSizeButton" Click="IncreaseFontSizeButton_Click" ToolTip="Increase Font Size">
+                    <TextBlock Text="+" FontSize="18"/>
+                </Button>
+            </StackPanel>
+
             <Button ToolTip="Bulleted List" Click="BulletList_Click">
                 <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE8FD;</TextBlock>
                 <Button.ContextMenu>
