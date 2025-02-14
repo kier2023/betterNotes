@@ -44,13 +44,23 @@ namespace BetterNotes
 
         private void BulletList_Click(object sender, RoutedEventArgs e)
         {
-            EditingCommands.ToggleBullets.Execute(null, NoteTextBox);
+            System.Windows.Controls.Button btn = sender as System.Windows.Controls.Button;
+            if (btn.ContextMenu != null)
+            {
+                btn.ContextMenu.IsOpen = true;
+            }
         }
 
-        private void NumberList_Click(object sender, RoutedEventArgs e)
+        private void BulletStyle_Click(object sender, RoutedEventArgs e)
         {
-            EditingCommands.ToggleNumbering.Execute(null, NoteTextBox);
+            if (sender is System.Windows.Controls.MenuItem item)
+            {
+                string selectedBullet = item.Tag.ToString();
+                NoteTextBox.CaretPosition.InsertTextInRun(selectedBullet);
+                NoteTextBox.CaretPosition = NoteTextBox.CaretPosition.GetNextInsertionPosition(LogicalDirection.Forward);
+            }
         }
+
 
         private void NoteTextBox_TextChanged(object sender, RoutedEventArgs e)
         {

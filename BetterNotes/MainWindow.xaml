@@ -41,11 +41,16 @@
                 <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE8DC;</TextBlock>
             </Button>
 
-            <Button Click="BulletList_Click" ToolTip="Bulleted List">
-                <TextBox FontFamily="Segoe Fluent Icons" FontSize="18">&#xE8FD;</TextBox>
-            </Button>
-            <Button Click="NumberList_Click" ToolTip="Numbered List">
-                <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE821;</TextBlock>
+
+            <Button ToolTip="Bulleted List" Click="BulletList_Click">
+                <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE8FD;</TextBlock>
+                <Button.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="• Bullet" Click="BulletStyle_Click" Tag="• " />
+                        <MenuItem Header="◦ Circle" Click="BulletStyle_Click" Tag="◦ " />
+                        <MenuItem Header="▪ Square" Click="BulletStyle_Click" Tag="▪ " />
+                    </ContextMenu>
+                </Button.ContextMenu>
             </Button>
         </ToolBar>
 
