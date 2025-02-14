@@ -1,0 +1,12 @@
+# Ignore Visual Studio files
+.vs/
+/BetterNotes/bin/
+/BetterNotes/obj/
+/BetterNotes/debug/
+
+# Ignore user-specific settings
+*.user
+*.suo
+*.cache
+*.log
+*.sln.ide
