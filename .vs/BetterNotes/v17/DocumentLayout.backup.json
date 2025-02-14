@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\kiero\\source\\repos\\BetterNotes\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FF73887C-476B-46CC-835D-E84BAA372F30}|BetterNotes\\BetterNotes.csproj|C:\\Users\\kiero\\source\\repos\\BetterNotes\\betternotes\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FF73887C-476B-46CC-835D-E84BAA372F30}|BetterNotes\\BetterNotes.csproj|solutionrelative:betternotes\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FF73887C-476B-46CC-835D-E84BAA372F30}|BetterNotes\\BetterNotes.csproj|c:\\users\\kiero\\source\\repos\\betternotes\\betternotes\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FF73887C-476B-46CC-835D-E84BAA372F30}|BetterNotes\\BetterNotes.csproj|solutionrelative:betternotes\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -18,25 +22,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\kiero\\source\\repos\\BetterNotes\\BetterNotes\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "BetterNotes\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\kiero\\source\\repos\\BetterNotes\\BetterNotes\\MainWindow.xaml.cs*",
-              "RelativeToolTip": "BetterNotes\\MainWindow.xaml.cs*",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwCEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-13T22:58:03.125Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\kiero\\source\\repos\\BetterNotes\\BetterNotes\\MainWindow.xaml",
               "RelativeDocumentMoniker": "BetterNotes\\MainWindow.xaml",
@@ -44,6 +38,53 @@
               "RelativeToolTip": "BetterNotes\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-02-13T22:58:04.874Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "30f31f49-d1ac-447b-be2c-a6bf679084f9",
+        "Display": 1,
+        "X": 528,
+        "Y": -15,
+        "Width": 800,
+        "Height": 600,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\kiero\\source\\repos\\BetterNotes\\BetterNotes\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "BetterNotes\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\kiero\\source\\repos\\BetterNotes\\BetterNotes\\MainWindow.xaml",
+              "RelativeToolTip": "BetterNotes\\MainWindow.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-14T13:47:30.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\kiero\\source\\repos\\BetterNotes\\BetterNotes\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "BetterNotes\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\kiero\\source\\repos\\BetterNotes\\BetterNotes\\MainWindow.xaml.cs",
+              "RelativeToolTip": "BetterNotes\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowDQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T22:58:03.125Z",
               "EditorCaption": ""
             }
           ]

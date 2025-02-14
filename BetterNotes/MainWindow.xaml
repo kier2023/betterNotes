@@ -19,9 +19,9 @@
         <!-- Menu Bar -->
         <Menu Grid.Row="0">
             <MenuItem Header="File">
-                <MenuItem Header="Save As..." Click="SaveAs_Click">
-                    
-                </MenuItem>
+                <MenuItem Header="Open File..." Click="OpenFile_Click"></MenuItem>
+                <MenuItem Header="Save Note" Click="SaveFile_Click"></MenuItem>
+                <MenuItem Header="Save As..." Click="SaveAs_Click"></MenuItem>
             </MenuItem>
         </Menu>
         
@@ -29,7 +29,7 @@
         <TextBox x:Name="NoteTextBox" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
                  FontSize="14" TextWrapping="NoWrap" 
                  Grid.Row="1" TextChanged="NoteTextBox_TextChanged"
-                 SelectionChanged="NoteTextBox_SelectionChanged" Text=""/>
+                 SelectionChanged="NoteTextBox_SelectionChanged"/>
 
         
         <!-- Status Bar -->
@@ -39,6 +39,9 @@
             </StatusBarItem>
             <StatusBarItem>
                 <TextBlock Name="LineColText" Text="Ln 1, Col 1" />
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <TextBlock Name="SaveStatusText" Text="Saved" />
             </StatusBarItem>
         </StatusBar>
 

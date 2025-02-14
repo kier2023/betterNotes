@@ -9,6 +9,7 @@ namespace BetterNotes
     public partial class MainWindow : Window
     {
         private string currentFilePath = "untitled.txt";
+        private bool isUnsaved = false;
 
         public MainWindow()
         {
@@ -24,6 +25,9 @@ namespace BetterNotes
         private void NoteTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             CharCountText.Text = $"Characters: {NoteTextBox.Text.Length}";
+
+            isUnsaved = true;
+            SaveStatusText.Text = "Unsaved Changes";
         }
 
         private void NoteTextBox_SelectionChanged(object sender, RoutedEventArgs e)
@@ -40,6 +44,21 @@ namespace BetterNotes
             File.WriteAllText(currentFilePath, NoteTextBox.Text);
         }
 
+        private void SaveFile_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(currentFilePath) || currentFilePath == "untitled.txxt")
+            {
+                SaveAs_Click(sender, e);
+            }
+            else
+            {
+                File.WriteAllText(currentFilePath, NoteTextBox.Text);
+
+                isUnsaved = false;
+                SaveStatusText.Text = "Saved";
+            }
+        }
+
         private void SaveAs_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.SaveFileDialog saveFileDialog = new System.Windows.Forms.SaveFileDialog()
@@ -52,6 +71,24 @@ namespace BetterNotes
             {
                 currentFilePath = saveFileDialog.FileName;
                 File.WriteAllText(currentFilePath, NoteTextBox.Text);
+
+                isUnsaved = false;
+                SaveStatusText.Text = "Saved";
+            }
+        }
+
+        private void OpenFile_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog()
+            {
+                Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*",
+                Title = "Open File"
+            };
+
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                currentFilePath = openFileDialog.FileName;
+                NoteTextBox.Text = File.ReadAllText(currentFilePath);
             }
         }
     }
