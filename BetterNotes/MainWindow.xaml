@@ -18,12 +18,16 @@
 
         <!-- Menu Bar -->
         <Menu Grid.Row="0">
+            <MenuItem Header="Home" Click=" NavigateHome_Click"></MenuItem>
             <MenuItem Header="File">
                 <MenuItem Header="Open File..." Click="OpenFile_Click"></MenuItem>
                 <MenuItem Header="Save Note" Click="SaveFile_Click"></MenuItem>
                 <MenuItem Header="Save As..." Click="SaveAs_Click"></MenuItem>
             </MenuItem>
         </Menu>
+        
+        <!-- Navigation Frame -->
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
         
         <!-- Text Box -->
         <TextBox x:Name="NoteTextBox" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"

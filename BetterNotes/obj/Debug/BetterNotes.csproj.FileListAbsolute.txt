@@ -1,0 +1,17 @@
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\bin\Debug\BetterNotes.exe.config
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\bin\Debug\BetterNotes.exe
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\bin\Debug\BetterNotes.pdb
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\obj\Debug\BetterNotes.csproj.AssemblyReference.cache
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\obj\Debug\MainWindow.g.cs
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\obj\Debug\App.g.cs
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\obj\Debug\BetterNotes_MarkupCompile.cache
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\obj\Debug\BetterNotes_MarkupCompile.lref
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\obj\Debug\MainWindow.baml
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\obj\Debug\BetterNotes.g.resources
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\obj\Debug\BetterNotes.Properties.Resources.resources
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\obj\Debug\BetterNotes.csproj.GenerateResource.cache
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\obj\Debug\BetterNotes.csproj.CoreCompileInputs.cache
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\obj\Debug\BetterNotes.exe
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\obj\Debug\BetterNotes.pdb
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\obj\Debug\DashboardPage.g.cs
+C:\Users\kiero\source\repos\BetterNotes\BetterNotes\obj\Debug\DashboardPage.baml

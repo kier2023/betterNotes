@@ -44,6 +44,11 @@ namespace BetterNotes
             File.WriteAllText(currentFilePath, NoteTextBox.Text);
         }
 
+        private void NavigateHome_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new DashboardPage());
+        }
+
         private void SaveFile_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(currentFilePath) || currentFilePath == "untitled.txxt")

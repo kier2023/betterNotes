@@ -1,18 +1,12 @@
-# Ignore Visual Studio specific files
+# Ignore Visual Studio files
 .vs/
+BetterNotes/bin/
+BetterNotes/obj/
+BetterNotes/debug/
+
+# Ignore user-specific settings
 *.user
 *.suo
 *.cache
-*.pdb
-*.obj
 *.log
-*.tlog
-*.vscode/
-
-# Ignore build directories
-bin/
-obj/
-
-# Ignore user-specific files
-*.csproj.user
-*.sln.docstates
+*.sln.ide
