@@ -73,6 +73,14 @@
             <Button Click="CheckList_Click" ToolTip="CheckList">
                 <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xe762;</TextBlock>
             </Button>
+
+            <Button Click="IncreaseIndent_Click" ToolTip="Increase Indent">
+                <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE291;</TextBlock>
+            </Button>
+
+            <Button Click="DecreaseIndent_Click" ToolTip="Decrease Indent">
+                <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE290;</TextBlock>
+            </Button>
         </ToolBar>
 
         <!-- Text Box -->

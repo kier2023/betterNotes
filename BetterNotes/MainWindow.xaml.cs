@@ -133,6 +133,28 @@ namespace BetterNotes
             }
         }
 
+        private void IncreaseIndent_Click(object sender, RoutedEventArgs e)
+        {
+            Paragraph paragraph = NoteTextBox.CaretPosition.Paragraph;
+            if (paragraph != null)
+            {
+                Thickness margin = paragraph.Margin;
+                margin.Left += 20;
+                paragraph.Margin = margin;
+            }
+        }
+
+        private void DecreaseIndent_Click(object sender, RoutedEventArgs e)
+        {
+            Paragraph paragraph = NoteTextBox.CaretPosition.Paragraph;
+            if (paragraph != null)
+            {
+                Thickness margin = paragraph.Margin;
+                margin.Left = Math.Max(0, margin.Left - 20);
+                paragraph.Margin = margin;
+            }
+        }
+
         private void NoteTextBox_TextChanged(object sender, RoutedEventArgs e)
         {
 
