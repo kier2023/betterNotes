@@ -7,7 +7,7 @@ This project is a **work in progress**, and I’m continuously improving it as I
 
 ---
 
-## Features
+## Features included or pending
 ✅ Basic text editing (similar to Notepad)  
 ✅ Persistent notes (restores unsaved content on relaunch)  
 ✅ Line & column display  
