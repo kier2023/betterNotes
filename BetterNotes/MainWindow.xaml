@@ -30,7 +30,52 @@
         </Menu>
 
         <!-- Formatting Toolbar -->
-        <ToolBar Grid.Row="1">
+        <ToolBar Grid.Row="1" Background="#F0F0F0">
+            <ToolBar.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="2"/>
+                    <Setter Property="Padding" Value="4"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="border" 
+                                Background="{TemplateBinding Background}" 
+                                CornerRadius="4" 
+                                Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#E0E0E0"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="border" Property="Background" Value="#C8C8C8"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+
+                <Style TargetType="ComboBox">
+                    <Setter Property="Margin" Value="2"/>
+                    <Setter Property="Padding" Value="2"/>
+                    <Setter Property="Width" Value="150"/>
+                    <Setter Property="FontSize" Value="14"/>
+                </Style>
+
+                <Style TargetType="TextBox">
+                    <Setter Property="Margin" Value="2"/>
+                    <Setter Property="Padding" Value="2"/>
+                    <Setter Property="Width" Value="30"/>
+                    <Setter Property="TextAlignment" Value="Center"/>
+                </Style>
+            </ToolBar.Resources>
+
             <Button Click="Bold_Click" ToolTip="Bold">
                 <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE8DD;</TextBlock>
             </Button>
@@ -41,19 +86,15 @@
                 <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE8DC;</TextBlock>
             </Button>
 
-            <ComboBox x:Name="FontComboBox" Width="150" 
-              SelectionChanged="FontComboBox_SelectionChanged"
-              ToolTip="Select Font">
+            <ComboBox x:Name="FontComboBox" SelectionChanged="FontComboBox_SelectionChanged" ToolTip="Select Font">
             </ComboBox>
 
-            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Button x:Name="DecreaseFontSizeButton" Click="DecreaseFontSizeButton_Click" ToolTip="Decrease Font Size">
                     <TextBlock Text="-" FontSize="18" />
                 </Button>
-
-                <TextBox x:Name="FontSizeTextBox" Width="30" Margin="5,0" TextAlignment="Center"
-                         TextChanged="FontSizeTextBox_TextChanged" ToolTip="Font Size" />
-
+                <TextBox x:Name="FontSizeTextBox" TextChanged="FontSizeTextBox_TextChanged" ToolTip="Font Size" />
                 <Button x:Name="IncreaseFontSizeButton" Click="IncreaseFontSizeButton_Click" ToolTip="Increase Font Size">
                     <TextBlock Text="+" FontSize="18"/>
                 </Button>
@@ -70,18 +111,18 @@
                 </Button.ContextMenu>
             </Button>
 
-            <Button Click="CheckList_Click" ToolTip="CheckList">
-                <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xe762;</TextBlock>
+            <Button Click="CheckList_Click" ToolTip="Checklist">
+                <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE762;</TextBlock>
             </Button>
 
             <Button Click="IncreaseIndent_Click" ToolTip="Increase Indent">
                 <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE291;</TextBlock>
             </Button>
-
             <Button Click="DecreaseIndent_Click" ToolTip="Decrease Indent">
                 <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE290;</TextBlock>
             </Button>
         </ToolBar>
+
 
         <!-- Text Box -->
         <RichTextBox x:Name="NoteTextBox" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"
