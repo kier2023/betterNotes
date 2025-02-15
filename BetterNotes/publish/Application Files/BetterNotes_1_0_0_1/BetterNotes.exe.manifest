@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="BetterNotes.exe" version="1.0.0.1" publicKeyToken="2a38ffe25220fe79" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="BetterNotes" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="BetterNotes.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BetterNotes.exe" size="22952">
+      <assemblyIdentity name="BetterNotes" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>g7/Hhj1zfnqi6nVJbCK54pQ3ii9pG2S7mTGpOYKojfM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CommonWin32.dll" size="199168">
+      <assemblyIdentity name="CommonWin32" version="2.0.0.0" publicKeyToken="A0A4EDCFE233918D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>MyxcTgwgejJbKk9vLfRCcuiESwiaBLQi9Bjv7Yec1bw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ModernWPF.dll" size="255488">
+      <assemblyIdentity name="ModernWPF" version="1.0.0.0" publicKeyToken="C99D0CFBEA7491EF" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>5g4LFlQWZD+wuR+hZmD9dGNDXtZ3U8S/OnPn+9HRTrI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ja\ModernWPF.resources.dll" size="4608">
+      <assemblyIdentity name="ModernWPF.resources" version="1.0.0.0" publicKeyToken="C99D0CFBEA7491EF" language="ja" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>+t7ywu9y1P1qtTIjUCojZRQf5tX8PJgeMyp1cCbZCsA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="zh-Hans\ModernWPF.resources.dll" size="4608">
+      <assemblyIdentity name="ModernWPF.resources" version="1.0.0.0" publicKeyToken="C99D0CFBEA7491EF" language="zh-Hans" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>O1h1z1BRwgWpSF5xVgU82Tez4wCWQS/XeW3vCBoiQJ8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="zh-Hant\ModernWPF.resources.dll" size="4608">
+      <assemblyIdentity name="ModernWPF.resources" version="1.0.0.0" publicKeyToken="C99D0CFBEA7491EF" language="zh-Hant" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>J4nvAd+ufPIqp0SEpuNrFUn77tZgQeWWNfClVmMK0Os=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="BetterNotes.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>oWu74zvPy0v3fB+cE0VM1nicyfA0TvANUiqy8USokWE=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=KIERON\kiero" issuerKeyHash="cf3776dcc8e9220b229e43e0a20febcb1f329447" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>hFkS4LJbJgrlLEo1HGO376ZFSjcAWT0sTK2/m9Wqjvs=</DigestValue></Reference></SignedInfo><SignatureValue>JqhR2sqtLjcSkDevCq5Z1QFdlFT9Pex4L8j1Av6REY9Yhvcg3ok/hrGmu4ZMfMY2Xjl9Gkwzxjc1gR+uKu4NFRGFhsg3JjtoHTA8lKMpyDhnvLvXmmsVJuN+1cufj3Zvi59nedHtGfjB5Tna8JUDuX6qOvy3h+5r2hKvjfUWdXA=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>zemvSfAZ8avEDlVYdwk7xA3PrjbzEB8wpdN5dboBJFCudnAvdHC3/BI/LjXnAQmCyZriVOLNuybVSfgwcVtQJSubgjuFxRk7OizoRQkLDJpuMtwRDg2zAgbuuh/z4W9LjnRWDwq15Wp3kxpjLI3ZWsarZ1XmhhT83FrzZgSSYzk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="fb8eaad59bbfad4c2c3d5900374a45a6efb7631c354a2ce50a265bb2e0125984" Description="" Url=""><as:assemblyIdentity name="BetterNotes.exe" version="1.0.0.1" publicKeyToken="2a38ffe25220fe79" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=KIERON\kiero</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Wdqe/xapXH2S2gUNKepvozXt9PBrOA5wnx2kdSpp4kI=</DigestValue></Reference></SignedInfo><SignatureValue>uJj94+uWBSais9vNN9gUXA16y2yGZ44qeNmrLJ5ljDMRIXVLN+9wOwRzH1zIulPXvMR/mzD0Z+Y2vllFHhhcN1gsUBXehAWFvXgJFhGdoBeJptZFs1SUma57PuEFy2QwznIaRGtjOau2s49prXTD1rWi8jkci3dH5Z/A8bCVTq8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>zemvSfAZ8avEDlVYdwk7xA3PrjbzEB8wpdN5dboBJFCudnAvdHC3/BI/LjXnAQmCyZriVOLNuybVSfgwcVtQJSubgjuFxRk7OizoRQkLDJpuMtwRDg2zAgbuuh/z4W9LjnRWDwq15Wp3kxpjLI3ZWsarZ1XmhhT83FrzZgSSYzk=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIByTCCATKgAwIBAgIQRa/xBHineZ5DDOAEcvDBizANBgkqhkiG9w0BAQsFADAjMSEwHwYDVQQDHhgASwBJAEUAUgBPAE4AXABrAGkAZQByAG8wHhcNMjUwMjE1MDAwMzQ3WhcNMjYwMjE1MDYwMzQ3WjAjMSEwHwYDVQQDHhgASwBJAEUAUgBPAE4AXABrAGkAZQByAG8wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAM3pr0nwGfGrxA5VWHcJO8QNz6428xAfMKXTeXW6ASRQrnZwL3Rwt/wSPy415wEJgsma4lTizbsm1Un4MHFbUCUrm4I7hcUZOzos6EUJCwyabjLcEQ4NswIG7rof8+FvS450Vg8KteVqd5MaYyyN2VrGq2dV5oYU/Nxa82YEkmM5AgMBAAEwDQYJKoZIhvcNAQELBQADgYEAMeHelA7NwJQTFnZTp8SfFcHo3f7a+b9ph9p3MTmXXUaBI08reYMlmVrEsMPJhfdUOytADiM3IF3OyWNB8DguufAr5LFIgK4pEC8gEzcZAKcJcnd+7yr4b05J/svexhi1/Qr7EsfCXlHLA+7riRk1MWnucp7rNauUtH8TxXH/YTU=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
