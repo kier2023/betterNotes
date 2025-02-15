@@ -135,17 +135,46 @@
         </RichTextBox>
 
         <!-- Status Bar -->
-        <StatusBar Grid.Row="3">
-            <StatusBarItem>
-                <TextBlock Name="CharCountText" Text="Characters: 0" />
-            </StatusBarItem>
-            <StatusBarItem>
-                <TextBlock Name="LineColText" Text="Ln 1, Col 1" />
-            </StatusBarItem>
-            <StatusBarItem HorizontalAlignment="Right">
-                <TextBlock Name="SaveStatusText" Text="Saved" />
-            </StatusBarItem>
-        </StatusBar>
+        <StatusBar Grid.Row="3" Background="LightGray" Padding="5">
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <!-- Column 0: ApplicationVersionControl -->
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Column 1: Divider -->
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Column 2: CharCountText -->
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Column 3: Divider -->
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Column 4: LineColText -->
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Column 5: Divider -->
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Column 6: SaveStatusText -->
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
+                <TextBlock Grid.Column="0" Name="ApplicationVersionControl" 
+                   Text="Pre-Alpha v0.0.2" FontWeight="Bold" Margin="5,0"/>
+
+                <Border Grid.Column="1" Width="1" Background="Black" Margin="5,0" 
+                VerticalAlignment="Center" Height="15"/>
+
+                <TextBlock Grid.Column="2" Name="CharCountText" 
+                   Text="Characters: 0" Margin="5,0"/>
+
+                <Border Grid.Column="3" Width="1" Background="Black" Margin="5,0" 
+                VerticalAlignment="Center" Height="15"/>
+
+                <TextBlock Grid.Column="4" Name="LineColText" 
+                   Text="Ln 1, Col 1" Margin="5,0"/>
+
+                <Border Grid.Column="5" Width="1" Background="Black" Margin="5,0" 
+                VerticalAlignment="Center" Height="15"/>
+
+                <TextBlock Grid.Column="6" Name="SaveStatusText" 
+                   Text="Saved" Margin="5,0" HorizontalAlignment="Right"/>
+            </Grid>
+        </StatusBar>
     </Grid>
 </Window>
