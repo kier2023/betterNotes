@@ -1,4 +1,3 @@
-```
 # Better Notes
 
 ## About
@@ -61,5 +60,3 @@ Since this is a learning project, I’m not actively looking for contributors, b
 
 ## License
 This project is released under the **MIT License** – feel free to use and modify it as you like.
-```
-
