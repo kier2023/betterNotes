@@ -85,10 +85,14 @@
             <Button Click="Underline_Click" ToolTip="Underline">
                 <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE8DC;</TextBlock>
             </Button>
+            <Border Width="1" Background="Black" Margin="5,0" 
+                VerticalAlignment="Center" Height="15"/>
 
             <ComboBox x:Name="FontComboBox" SelectionChanged="FontComboBox_SelectionChanged" ToolTip="Select Font">
             </ComboBox>
 
+            <Border Width="1" Background="Black" Margin="5,0" 
+                VerticalAlignment="Center" Height="15"/>
 
             <StackPanel Orientation="Horizontal" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Button x:Name="DecreaseFontSizeButton" Click="DecreaseFontSizeButton_Click" ToolTip="Decrease Font Size">
@@ -99,6 +103,8 @@
                     <TextBlock Text="+" FontSize="18"/>
                 </Button>
             </StackPanel>
+            <Border Width="1" Background="Black" Margin="5,0" 
+                VerticalAlignment="Center" Height="15"/>
 
             <Button ToolTip="Bulleted List" Click="BulletList_Click">
                 <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE8FD;</TextBlock>
@@ -110,14 +116,20 @@
                     </ContextMenu>
                 </Button.ContextMenu>
             </Button>
+            <Border Width="1" Background="Black" Margin="5,0" 
+                VerticalAlignment="Center" Height="15"/>
 
             <Button Click="CheckList_Click" ToolTip="Checklist">
                 <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE762;</TextBlock>
             </Button>
+            <Border Width="1" Background="Black" Margin="5,0" 
+                VerticalAlignment="Center" Height="15"/>
 
             <Button Click="IncreaseIndent_Click" ToolTip="Increase Indent">
                 <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE291;</TextBlock>
             </Button>
+            <Border Width="1" Background="Black" Margin="5,0" 
+                VerticalAlignment="Center" Height="15"/>
             <Button Click="DecreaseIndent_Click" ToolTip="Decrease Indent">
                 <TextBlock FontFamily="Segoe Fluent Icons" FontSize="18">&#xE290;</TextBlock>
             </Button>
